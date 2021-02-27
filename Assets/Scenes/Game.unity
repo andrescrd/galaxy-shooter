@@ -402,5 +402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e107a68ff51447840876acacb70c166f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialPosition: {x: 0, y: 0, z: 0}
-  Speed: 20
+  initialPosition: {x: 0, y: 0, z: 0}
+  speed: 5
+  laserPrefab: {fileID: 3358876696340974233, guid: b94427ef4e1b86e46a68ff2b5973ba4e,
+    type: 3}
+  fireRate: 0.5
+  laserOffset: {x: 0, y: 0.8, z: 0}
