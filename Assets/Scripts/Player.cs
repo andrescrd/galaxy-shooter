@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private Vector3 laserOffset = new Vector3(0, 0.8f, 0);
+    [SerializeField] private int lives = 3;
 
     private float _nextFire;
 
@@ -45,5 +46,13 @@ public class Player : MonoBehaviour
         };
 
         transform.position = newPosition;
+    }
+
+    public void TakeDamage()
+    {
+        lives--;
+
+        if (lives <= 0)
+            Destroy(gameObject);
     }
 }
