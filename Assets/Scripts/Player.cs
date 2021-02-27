@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private bool _isShieldShotActive;
     private SpawnManager _spawnManager;
     private UIManager _uiManager;
+    private AudioSource _audioSource;
+
     private int _score;
 
     private void Start()
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
         transform.position = initialPosition;
         _spawnManager = FindObjectOfType<SpawnManager>();
         _uiManager = FindObjectOfType<UIManager>();
+        _audioSource = GetComponent<AudioSource>();
 
         leftEngine.SetActive(false);
         rightEngine.SetActive(false);
@@ -59,6 +62,8 @@ public class Player : MonoBehaviour
         {
             Instantiate(laserPrefab, transform.position + laserOffset, Quaternion.identity);
         }
+
+        _audioSource.Play();
     }
 
     private void CalculateMovement()

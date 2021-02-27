@@ -12,6 +12,9 @@ namespace Managers
         {
             if (Input.GetKeyDown(KeyCode.R) && _isGameOver)
                 SceneManager.LoadScene(sceneBuildIndex: 1);
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+                Application.Quit();
         }
 
         public void GameOver()
