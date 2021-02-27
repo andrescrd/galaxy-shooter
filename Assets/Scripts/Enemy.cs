@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Timers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,33 +14,32 @@ public class Enemy : MonoBehaviour
     private Animator _animator;
     private AudioSource _audioSource;
     private static readonly int OnEnemyDeath = Animator.StringToHash("OnEnemyDeath");
-    private bool _canShot = true;
+    private float _canFire = -1;
 
     private void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-
-        StartCoroutine(ShotRoutine());
     }
 
     private void Update()
     {
         CalculateMovement();
+        Shoot();
     }
 
-    private IEnumerator ShotRoutine()
+    private void Shoot()
     {
-        while (_canShot)
+        
+        if (Time.time > _canFire)
         {
+            _canFire = Time.time + Random.Range(1f, 7f);
             var laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
             var allLasers = laser.GetComponentsInChildren<Laser>();
 
             foreach (var singleLaser in allLasers)
                 singleLaser.IsEnemyLaser();
-
-            yield return new WaitForSeconds(timeToShot);
         }
     }
 
@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
 
             Destroy(GetComponent<Collider2D>());
-            _canShot = false;
             Destroy(gameObject, 2.8f);
         }
     }
@@ -84,7 +83,6 @@ public class Enemy : MonoBehaviour
             _audioSource.Play();
 
             Destroy(GetComponent<Collider2D>());
-            _canShot = false;
             Destroy(gameObject, 2.8f);
         }
     }
