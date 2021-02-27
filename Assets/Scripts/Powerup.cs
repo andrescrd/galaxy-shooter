@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using Enums;
+using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
     [SerializeField] private float speed = 3.0f;
+    [SerializeField] private PowerupEnum type = PowerupEnum.TripleShot;
     
     void Update()
     {
@@ -19,7 +21,20 @@ public class Powerup : MonoBehaviour
             var player = other.transform.GetComponent<Player>();
             
             if(player)
-                player.TripleShotActive();
+            {
+                switch (type)
+                {
+                    case PowerupEnum.TripleShot:
+                        player.TripleShotActive();
+                        break;
+                    case PowerupEnum.Speed:
+                        player.SpeedActive();
+                        break;
+                    case  PowerupEnum.Shield:
+                        player.ShieldActive();
+                        break;
+                }
+            }
             
             Destroy(gameObject);
         }

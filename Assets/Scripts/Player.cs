@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Vector3 initialPosition = new Vector3(0, 0, 0);
     [SerializeField] private float speed = 5;
+    [SerializeField] private float speedMiltiplier = 3;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private GameObject tripleShotPrefab;
     [SerializeField] private float fireRate = 0.5f;
@@ -81,9 +82,26 @@ public class Player : MonoBehaviour
         StartCoroutine(TripleShotPowerDownRoutinte());
     }
 
-    IEnumerator TripleShotPowerDownRoutinte()
+    private IEnumerator TripleShotPowerDownRoutinte()
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
+    }
+
+    public void SpeedActive()
+    {
+        speed *= speedMiltiplier;
+        StartCoroutine(SpeedActiveRoutine());
+    }
+
+    private IEnumerator SpeedActiveRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        speed /= speedMiltiplier;
+    }
+
+    public void ShieldActive()
+    {
+        throw new System.NotImplementedException();
     }
 }
