@@ -4,6 +4,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject powerupPrefab;
     [SerializeField] private GameObject enemyContainer;
     [SerializeField] private float timeToSpawn = 5.0f;
 
@@ -12,10 +13,11 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnRoutine());
+        StartCoroutine(SpawnEnemyRoutine());
+        StartCoroutine(SpawnPowerupRoutine());
     }
 
-    IEnumerator SpawnRoutine()
+    IEnumerator SpawnEnemyRoutine()
     {
         while (_canSpawn)
         {
@@ -24,6 +26,17 @@ public class SpawnManager : MonoBehaviour
             enemy.transform.parent = enemyContainer.transform;
 
             yield return new WaitForSeconds(timeToSpawn);
+        }
+    }
+
+    IEnumerator SpawnPowerupRoutine()
+    {
+        while (_canSpawn)
+        {
+            var newPosition = new Vector3(Random.Range(-8f, 8f), 7, 0);
+            Instantiate(powerupPrefab, newPosition, Quaternion.identity);
+
+            yield return new WaitForSeconds(Random.Range(3.0f, 8.0f));
         }
     }
 

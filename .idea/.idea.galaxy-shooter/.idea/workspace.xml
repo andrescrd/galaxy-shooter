@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d5f8c65-abe2-49b2-9770-d3536c8277fe" name="Default Changelist" comment="stop spawn">
+    <list default="true" id="4d5f8c65-abe2-49b2-9770-d3536c8277fe" name="Default Changelist" comment="adding assets">
       <change afterPath="$PROJECT_DIR$/Assets/Audio.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Audio/explosion_sound.wav" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Audio/explosion_sound.wav.meta" afterDir="false" />
@@ -1034,11 +1034,11 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Laser.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Powerup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Laser.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p2yFWQ3f5zoSZ9kYtEYB9U3B7N" />
@@ -1086,7 +1086,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614395379211</updated>
-      <workItem from="1614395390679" duration="8100000" />
+      <workItem from="1614395390679" duration="9478000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1614396398440</created>
@@ -1123,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614400797653</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding assets">
+      <created>1614404019015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614404019015</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1149,6 +1156,7 @@
     <MESSAGE value="adding enemy" />
     <MESSAGE value="spawn manager" />
     <MESSAGE value="stop spawn" />
-    <option name="LAST_COMMIT_MESSAGE" value="stop spawn" />
+    <MESSAGE value="adding assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding assets" />
   </component>
 </project>
