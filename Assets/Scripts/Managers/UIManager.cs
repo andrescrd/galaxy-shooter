@@ -2,57 +2,61 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+namespace Managers
 {
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Text gameOverText;
-    [SerializeField] private Text restartText;
-    [SerializeField] private Image liveImage;
-    [SerializeField] private Sprite[] liveSprites;
-
-    private GameManager _gameManager;
-    
-    void Start()
+    public class UIManager : MonoBehaviour
     {
-        _gameManager = GameObject.FindObjectOfType<GameManager>();
+        [SerializeField] private Text scoreText;
+        [SerializeField] private Text gameOverText;
+        [SerializeField] private Text restartText;
+        [SerializeField] private Image liveImage;
+        [SerializeField] private Sprite[] liveSprites;
 
-        gameOverText.gameObject.SetActive(false);
-        restartText.gameObject.SetActive(false);
+        private GameManager _gameManager;
 
-        if (scoreText)
-            scoreText.text = $"Score: 0";
-    }
-
-    public void UpdateScore(int score)
-    {
-        scoreText.text = $"Score: {score}";
-    }
-
-    public void UpdateLives(int lives)
-    {
-        liveImage.sprite = liveSprites[lives];
-
-        if (lives <= 0)
-            GameOverSequence();
-    }
-
-    private void GameOverSequence()
-    {
-        gameOverText.gameObject.SetActive(true);
-        restartText.gameObject.SetActive(true);
-        StartCoroutine(GameOverFlicker());
-        
-        _gameManager.GameOver();
-    }
-
-    private IEnumerator GameOverFlicker()
-    {
-        while (true)
+        private void Start()
         {
-            gameOverText.text = "GAME OVER";
-            yield return new WaitForSeconds(0.5f);
-            gameOverText.text = "";
-            yield return new WaitForSeconds(0.5f);
+            _gameManager = GameObject.FindObjectOfType<GameManager>();
+
+            gameOverText.gameObject.SetActive(false);
+            restartText.gameObject.SetActive(false);
+
+            if (scoreText)
+                scoreText.text = $"Score: 0";
+        }
+
+        public void UpdateScore(int score)
+        {
+            scoreText.text = $"Score: {score}";
+        }
+
+        public void UpdateLives(int lives)
+        {
+            liveImage.sprite = liveSprites[lives];
+
+            if (lives <= 0)
+                GameOverSequence();
+        }
+
+        private void GameOverSequence()
+        {
+            gameOverText.gameObject.SetActive(true);
+            restartText.gameObject.SetActive(true);
+            StartCoroutine(GameOverFlicker());
+        
+            _gameManager.GameOver();
+        }
+
+        private IEnumerator GameOverFlicker()
+        {
+            while (true)
+            {
+                gameOverText.text = "GAME OVER";
+                yield return new WaitForSeconds(0.5f);
+                gameOverText.text = "";
+                yield return new WaitForSeconds(0.5f);
+            }
+            // ReSharper disable once IteratorNeverReturns
         }
     }
 }

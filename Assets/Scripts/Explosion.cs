@@ -2,7 +2,7 @@
 
 public class Explosion : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         Destroy(gameObject, 3f);
     }

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace Views
 {
-    public void LoadNewGame()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        public void LoadNewGame()
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 1);
+        }
     }
 }

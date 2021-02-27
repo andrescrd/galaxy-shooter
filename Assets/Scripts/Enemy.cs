@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour
     private Animator _animator;
     private static readonly int OnEnemyDeath = Animator.StringToHash("OnEnemyDeath");
 
-    void Start()
+    private void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
         _animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         transform.Translate(Vector3.down * (speed * Time.deltaTime));
 

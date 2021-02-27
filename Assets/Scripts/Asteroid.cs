@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.Rotate(Vector3.forward * (speedRotation * Time.deltaTime));
     }

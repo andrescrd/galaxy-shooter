@@ -1,48 +1,51 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+namespace Managers
 {
-    [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] public GameObject[] powerUpPrefabs;
-    [SerializeField] private GameObject enemyContainer;
-    [SerializeField] private float timeToSpawn = 5.0f;
-
-    private bool _canSpawn = true;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SpawnManager : MonoBehaviour
     {
-        StartCoroutine(SpawnEnemyRoutine());
-        StartCoroutine(SpawnPowerUpRoutine());
-    }
+        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] public GameObject[] powerUpPrefabs;
+        [SerializeField] private GameObject enemyContainer;
+        [SerializeField] private float timeToSpawn = 5.0f;
 
-    private IEnumerator SpawnEnemyRoutine()
-    {
-        while (_canSpawn)
+        private bool _canSpawn = true;
+
+        // Start is called before the first frame update
+        private void Start()
         {
-            var newPosition = new Vector3(Random.Range(-8f, 8f), 7, 0);
-            var enemy = Instantiate(enemyPrefab, newPosition, Quaternion.identity);
-            enemy.transform.parent = enemyContainer.transform;
-
-            yield return new WaitForSeconds(timeToSpawn);
+            StartCoroutine(SpawnEnemyRoutine());
+            StartCoroutine(SpawnPowerUpRoutine());
         }
-    }
 
-    private IEnumerator SpawnPowerUpRoutine()
-    {
-        while (_canSpawn)
+        private IEnumerator SpawnEnemyRoutine()
         {
-            var newPosition = new Vector3(Random.Range(-8f, 8f), 7, 0);
-            var index = Random.Range(0, powerUpPrefabs.Length);
-            Instantiate(powerUpPrefabs[index], newPosition, Quaternion.identity);
+            while (_canSpawn)
+            {
+                var newPosition = new Vector3(Random.Range(-8f, 8f), 7, 0);
+                var enemy = Instantiate(enemyPrefab, newPosition, Quaternion.identity);
+                enemy.transform.parent = enemyContainer.transform;
 
-            yield return new WaitForSeconds(Random.Range(3.0f, 8.0f));
+                yield return new WaitForSeconds(timeToSpawn);
+            }
         }
-    }
 
-    public void StopSpawn()
-    {
-        _canSpawn = false;
+        private IEnumerator SpawnPowerUpRoutine()
+        {
+            while (_canSpawn)
+            {
+                var newPosition = new Vector3(Random.Range(-8f, 8f), 7, 0);
+                var index = Random.Range(0, powerUpPrefabs.Length);
+                Instantiate(powerUpPrefabs[index], newPosition, Quaternion.identity);
+
+                yield return new WaitForSeconds(Random.Range(3.0f, 8.0f));
+            }
+        }
+
+        public void StopSpawn()
+        {
+            _canSpawn = false;
+        }
     }
 }

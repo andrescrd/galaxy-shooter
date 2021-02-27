@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace Managers
 {
-    private bool _isGameOver;
-
-    // Update is called once per frame
-    void Update()
+    public class GameManager : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.R) && _isGameOver)
-            SceneManager.LoadScene(sceneBuildIndex: 1);
-    }
+        private bool _isGameOver;
 
-    public void GameOver()
-    {
-        _isGameOver = true;
+        // Update is called once per frame
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R) && _isGameOver)
+                SceneManager.LoadScene(sceneBuildIndex: 1);
+        }
+
+        public void GameOver()
+        {
+            _isGameOver = true;
+        }
     }
 }

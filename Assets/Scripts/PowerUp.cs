@@ -1,12 +1,13 @@
-﻿using Enums;
+﻿using System;
+using Enums;
 using UnityEngine;
 
-public class Powerup : MonoBehaviour
+public class PowerUp : MonoBehaviour
 {
     [SerializeField] private float speed = 3.0f;
-    [SerializeField] private PowerupEnum type = PowerupEnum.TripleShot;
-    
-    void Update()
+    [SerializeField] private PowerUpEnum type = PowerUpEnum.TripleShot;
+
+    private void Update()
     {
         transform.Translate(Vector3.down * (speed * Time.deltaTime));
 
@@ -24,13 +25,13 @@ public class Powerup : MonoBehaviour
             {
                 switch (type)
                 {
-                    case PowerupEnum.TripleShot:
+                    case PowerUpEnum.TripleShot:
                         player.TripleShotActive();
                         break;
-                    case PowerupEnum.Speed:
+                    case PowerUpEnum.Speed:
                         player.SpeedActive();
                         break;
-                    case  PowerupEnum.Shield:
+                    case  PowerUpEnum.Shield:
                         player.ShieldActive();
                         break;
                 }

@@ -1,6 +1,6 @@
 ﻿namespace Enums
 {
-    public enum PowerupEnum
+    public enum PowerUpEnum
     {
         TripleShot,
         Speed,

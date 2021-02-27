@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Managers;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,13 +16,13 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject leftEngine, rightEngine;
 
     private float _nextFire;
-    private bool _isTripleShotActive = false;
-    private bool _isShieldShotActive = false;
+    private bool _isTripleShotActive;
+    private bool _isShieldShotActive;
     private SpawnManager _spawnManager;
     private UIManager _uiManager;
-    private int _score = 0;
+    private int _score;
 
-    void Start()
+    private void Start()
     {
         transform.position = initialPosition;
         _spawnManager = FindObjectOfType<SpawnManager>();
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CalculateMovement();
 
@@ -70,10 +71,13 @@ public class Player : MonoBehaviour
 
         var newPosition = new Vector3
         {
+            // ReSharper disable once Unity.InefficientPropertyAccess
             y = Mathf.Clamp(transform.position.y, -3, 0),
+            // ReSharper disable once Unity.InefficientPropertyAccess
             x = Mathf.Clamp(transform.position.x, -9, 9)
         };
 
+        // ReSharper disable once Unity.InefficientPropertyAccess
         transform.position = newPosition;
     }
 
@@ -88,13 +92,14 @@ public class Player : MonoBehaviour
 
         lives--;
 
-        if (lives == 2)
+        switch (lives)
         {
-            leftEngine.SetActive(true);
-        }
-        else if (lives == 1)
-        {
-            rightEngine.SetActive(true);
+            case 2:
+                leftEngine.SetActive(true);
+                break;
+            case 1:
+                rightEngine.SetActive(true);
+                break;
         }
 
         _uiManager.UpdateLives(lives);
