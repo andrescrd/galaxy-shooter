@@ -10,10 +10,15 @@ public class Player : MonoBehaviour
     [SerializeField] private int lives = 3;
 
     private float _nextFire;
+    private SpawnManager _spawnManager;
 
     void Start()
     {
         transform.position = initialPosition;
+        _spawnManager = GameObject.FindObjectOfType<SpawnManager>();
+
+        if (_spawnManager == null)
+            Debug.LogError("Spawn Manager not found");
     }
 
     // Update is called once per frame
@@ -53,6 +58,9 @@ public class Player : MonoBehaviour
         lives--;
 
         if (lives <= 0)
+        {
+            _spawnManager.StopSpawn();
             Destroy(gameObject);
+        }
     }
 }
