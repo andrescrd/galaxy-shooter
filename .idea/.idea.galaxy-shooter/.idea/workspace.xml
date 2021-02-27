@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d5f8c65-abe2-49b2-9770-d3536c8277fe" name="Default Changelist" comment="update powerup">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Speed.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Speed.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/PowerupEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/PowerupEnum.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShieldPowerup.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShieldPowerup/Powerup_Shield.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShieldPowerup/Powerup_Shield.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShieldPowerup/ShieldPowerup_anim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShieldPowerup/ShieldPowerup_anim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpeedPowerup.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpeedPowerup/Powerup_Speed.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpeedPowerup/Powerup_Speed.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpeedPowerup/SpeedPowerup_anim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/SpeedPowerup/SpeedPowerup_anim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Shield.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Shield.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Speed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_Speed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_TripleShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Powerup_TripleShot.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +38,9 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Laser.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enums/PowerupEnum.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Powerup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
     </changedPaths>
   </component>
@@ -82,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614395379211</updated>
       <workItem from="1614395390679" duration="10287000" />
-      <workItem from="1614437059013" duration="452000" />
+      <workItem from="1614437059013" duration="2539000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1614396398440</created>
@@ -133,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614405435918</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="powerup speed">
+      <created>1614437825541</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614437825541</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +177,7 @@
     <MESSAGE value="stop spawn" />
     <MESSAGE value="adding assets" />
     <MESSAGE value="update powerup" />
-    <option name="LAST_COMMIT_MESSAGE" value="update powerup" />
+    <MESSAGE value="powerup speed" />
+    <option name="LAST_COMMIT_MESSAGE" value="powerup speed" />
   </component>
 </project>

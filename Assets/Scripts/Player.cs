@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Vector3 initialPosition = new Vector3(0, 0, 0);
     [SerializeField] private float speed = 5;
-    [SerializeField] private float speedMiltiplier = 3;
+    [SerializeField] private float speedMultiplier = 2;
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private GameObject tripleShotPrefab;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private Vector3 laserOffset = new Vector3(0, 0.8f, 0);
     [SerializeField] private int lives = 3;
+    [SerializeField] private GameObject shieldVisualizer;
 
     private float _nextFire;
     private bool _isTripleShotActive = false;
+    private bool _isShieldShotActive = false;
     private SpawnManager _spawnManager;
 
     void Start()
@@ -67,6 +70,13 @@ public class Player : MonoBehaviour
 
     public void TakeDamage()
     {
+        if (_isShieldShotActive)
+        {
+            _isShieldShotActive = false;
+            shieldVisualizer.SetActive(false);
+            return;
+        }
+
         lives--;
 
         if (lives <= 0)
@@ -79,10 +89,10 @@ public class Player : MonoBehaviour
     public void TripleShotActive()
     {
         _isTripleShotActive = true;
-        StartCoroutine(TripleShotPowerDownRoutinte());
+        StartCoroutine(TripleShotPowerDownRoutine());
     }
 
-    private IEnumerator TripleShotPowerDownRoutinte()
+    private IEnumerator TripleShotPowerDownRoutine()
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
@@ -90,18 +100,19 @@ public class Player : MonoBehaviour
 
     public void SpeedActive()
     {
-        speed *= speedMiltiplier;
+        speed *= speedMultiplier;
         StartCoroutine(SpeedActiveRoutine());
     }
 
     private IEnumerator SpeedActiveRoutine()
     {
         yield return new WaitForSeconds(5.0f);
-        speed /= speedMiltiplier;
+        speed /= speedMultiplier;
     }
 
     public void ShieldActive()
     {
-        throw new System.NotImplementedException();
+        _isShieldShotActive = true;
+        shieldVisualizer.SetActive(true);
     }
 }
