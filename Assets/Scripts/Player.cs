@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 laserOffset = new Vector3(0, 0.8f, 0);
     [SerializeField] private int lives = 3;
     [SerializeField] private GameObject shieldVisualizer;
+    [SerializeField] private GameObject leftEngine, rightEngine;
 
     private float _nextFire;
     private bool _isTripleShotActive = false;
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
         transform.position = initialPosition;
         _spawnManager = FindObjectOfType<SpawnManager>();
         _uiManager = FindObjectOfType<UIManager>();
+
+        leftEngine.SetActive(false);
+        rightEngine.SetActive(false);
 
         if (_spawnManager == null)
             Debug.LogError("Spawn Manager not found");
@@ -83,7 +87,16 @@ public class Player : MonoBehaviour
         }
 
         lives--;
-        
+
+        if (lives == 2)
+        {
+            leftEngine.SetActive(true);
+        }
+        else if (lives == 1)
+        {
+            rightEngine.SetActive(true);
+        }
+
         _uiManager.UpdateLives(lives);
 
         if (lives <= 0)

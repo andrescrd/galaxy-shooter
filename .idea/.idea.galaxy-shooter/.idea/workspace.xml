@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d5f8c65-abe2-49b2-9770-d3536c8277fe" name="Default Changelist" comment="update powerup">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/Enemy.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/Enemy.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyDestroyed_anim.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/EnemyDestroyed_anim.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Explosion.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Explosion/Explosion.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Explosion/Explosion.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Explosion/Explosion_anim.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Explosion/Explosion_anim.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Asteroid.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Asteroid.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FX/Explosion.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/FX/Explosion.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Explosion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.galaxy-shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Players/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Players/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +32,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Powerup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Laser.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Views/MainMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Asteroid.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Explosion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p2yFWQ3f5zoSZ9kYtEYB9U3B7N" />
@@ -106,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614395379211</updated>
       <workItem from="1614395390679" duration="10287000" />
-      <workItem from="1614437059013" duration="10142000" />
+      <workItem from="1614437059013" duration="10651000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring">
       <created>1614396398440</created>
@@ -192,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614443813265</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="adding fx">
+      <created>1614451298824</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614451298824</updated>
+    </task>
+    <task id="LOCAL-00014" summary="adding truster">
+      <created>1614451492162</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614451492162</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +221,8 @@
     <MESSAGE value="adding score" />
     <MESSAGE value="adding game over" />
     <MESSAGE value="game manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="game manager" />
+    <MESSAGE value="adding fx" />
+    <MESSAGE value="adding truster" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding truster" />
   </component>
 </project>
