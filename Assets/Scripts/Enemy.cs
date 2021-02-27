@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Timers;
-using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed = 4.0f;
     [SerializeField] private GameObject laserPrefab;
-    [SerializeField] private float timeToShot = 2;
 
     private Player _player;
     private Animator _animator;
