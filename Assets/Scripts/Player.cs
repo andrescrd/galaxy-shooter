@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -18,14 +17,20 @@ public class Player : MonoBehaviour
     private bool _isTripleShotActive = false;
     private bool _isShieldShotActive = false;
     private SpawnManager _spawnManager;
+    private UIManager _uiManager;
+    private int _score = 0;
 
     void Start()
     {
         transform.position = initialPosition;
-        _spawnManager = GameObject.FindObjectOfType<SpawnManager>();
+        _spawnManager = FindObjectOfType<SpawnManager>();
+        _uiManager = FindObjectOfType<UIManager>();
 
         if (_spawnManager == null)
             Debug.LogError("Spawn Manager not found");
+
+        if (_uiManager == null)
+            Debug.LogError("UI Manager not found");
     }
 
     // Update is called once per frame
@@ -114,5 +119,11 @@ public class Player : MonoBehaviour
     {
         _isShieldShotActive = true;
         shieldVisualizer.SetActive(true);
+    }
+
+    public void AddScore(int score)
+    {
+        _score += score;
+        _uiManager.UpdateScore(_score);
     }
 }
